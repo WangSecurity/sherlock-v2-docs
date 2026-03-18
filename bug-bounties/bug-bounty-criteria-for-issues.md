@@ -30,7 +30,7 @@ This page includes the standards, duplication clarifications and general out of 
 6. **If a protocol's smart contracts or admin addresses get added to a "blacklist"** and the functionality of the protocol is affected by this blacklist, this is not considered a valid issue.\
 7. **Front-running initializers** where there is no irreversible damage or loss of funds & the protocol could just redeploy and initialize again is not a valid issue.
 8. Issues causing only **minor user experience issues inconvenience** without fund loss, such as temporarily inaccessible funds recoverable by the admin, are not valid.
-9. **User Blacklist:** User getting blacklisted by a token/contract causing harm only to themselves is **not** a valid issue.
+9. **User getting blacklisted** by a token/contract causing **harm only to themselves** is **not** a valid issue.
     However, if the malicious actor can use a blacklisted address and harm other parties (protocol or other users), and it qualifies for in-        scope severity definitions, then it can be considered valid.
 10. Issues assuming future opcode gas repricing are not considered to be valid issues.\
     **Use of call vs transfer** will be considered as a protocol design choice if there is no good reason why the call may consume more than 2300 gas without opcode repricings.
