@@ -27,7 +27,7 @@ This page includes the standards, duplication clarifications and general out of 
 5. **Admin Input/call validation:**
    1. Admin could have an incorrect call order. Example: If an Admin forgets to `setWithdrawAddress()` before calling `withdrawAll()` This is not a valid issue.
    2. An admin action can break certain assumptions about the functioning of the code. Example: Pausing a collateral causes some users to be unfairly liquidated or any other action causing loss of funds. This is not considered a valid issue.
-6. **If a protocol's smart contracts or admin addresses get added to a "blacklist"** and the functionality of the protocol is affected by this blacklist, this is not considered a valid issue.\
+6. **If a protocol's smart contracts or admin addresses get added to a "blacklist"** and the functionality of the protocol is affected by this blacklist, this is not considered a valid issue.
 7. **Front-running initializers** where there is no irreversible damage or loss of funds & the protocol could just redeploy and initialize again is not a valid issue.
 8. Issues causing only **minor user experience issues inconvenience** without fund loss, such as temporarily inaccessible funds recoverable by the admin, are not valid.
 9. **User getting blacklisted** by a token/contract causing **harm only to themselves** is **not** a valid issue.
@@ -42,7 +42,7 @@ This page includes the standards, duplication clarifications and general out of 
     > Exception: the recommendation to implement stale price checks **may** be valid. For [example](https://github.com/sherlock-audit/2024-12-mach-finance-judging/issues/41), the protocol may be using Pyth pull-based oracle, which requires requesting the price before using it. Hence, if we don't request the price firstly, or check it for staleness, then we can end up using very old price (e.g. from 1 hour/day ago).
 15. Issues from the previous audits (linked in the Bug Bounty Page) marked as acknowledged (not fixed) are not considered valid.
 16. **Chain re-org** and **network liveness** issues are not valid. However, if the underlying protocol is blockchain and the malicious actor can force a chain re-org affecting the protocol and the users, it can be a valid issue if it qualifies for in-scope severity definitions.
-17. Issues where users cannot safemint ERC721 tokens due to unsupported implementation are not valid.\
+17. Issues where users cannot safemint ERC721 tokens due to unsupported implementation are not valid.
 18. **Future issues:** Issues that result out of a future integration/implementation that was not mentioned in the docs/README or because of a future change in the code (as a fix to another issue) are **not** valid issues.
 19. Issues related to **tokens with non-standard behaviors**, such as [weird-tokens](https://github.com/d-xo/weird-erc20) are not considered valid by default unless these tokens are explicitly mentioned in the Bug Bounty Page. Tokens with decimals between 6 and 18 are not considered weird.
 20. Using Solidity versions that support **EVM opcodes that don't work** on networks on which the protocol is deployed is not a valid issue beacause one can manage compilation flags to compile for past EVM versions on newer Solidity versions.
